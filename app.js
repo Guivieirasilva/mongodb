@@ -33,7 +33,21 @@ mongoose.connect("mongodb://localhost/links")
 let db = mongoose.connection
 
 db.on("error", () => { console.log("Houve um erro") })
-db.once("open", () => { console.log(`Banco Carregado`)})
+db.once("open", () => { 
+    console.log(`Banco Carregado`)
+
+    app.get("/:title", async (req, res) => {
+        let title = req.params.title
+        try{
+            let doc = await Link.findOne({title})
+            console.log(doc)
+            res.redirect(doc.url)
+        }catch(error){
+            res.send(error)
+        }
+    })
+
+})
 
 app.get("/", (req, res) => {
     res.send('Hello World')
