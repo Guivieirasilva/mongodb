@@ -8,7 +8,18 @@ const redirect = async (req, res) => {
         console.log(doc)
         res.redirect(doc.url)
     }catch(error){
-        res.send("Houve um erro")
+        res.send(`Houve um erro ${error}`)
     }
 }
-module.exports = {redirect}
+const addLink = async (req, res) => {
+
+    let link = new Link (req.body)
+    try{
+        let doc = await link.save()
+        res.send(doc)
+    }catch(error){
+        res.send(`Houve um erro ${error}`)
+    }
+}
+
+module.exports = {redirect, addLink}
