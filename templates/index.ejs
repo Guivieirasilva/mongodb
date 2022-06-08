@@ -10,13 +10,17 @@
     <h1>Hello</h1>
 
     <form action="/" method="POST">
-        <input type="text" name="title" placeholder="Title" class="field" required>
+        <input type="text" name="title" placeholder="Title" class="field" value="<%= body.title%> " >
 
-        <input type="text" name="description" placeholder="Description" class="field">
+        <input type="text" name="description" placeholder="Description" class="field" value="<%= body.description%>">
 
-        <input type="text" name="url" placeholder="URL" class="field" required>
+        <input type="text" name="url" placeholder="URL" class="field" value="<%= body.url%>">
 
         <button>Salvar</button>
     </form>
+
+    <% if(error){ %> 
+    <h3><%= error.message %> </h3>
+        <% } %> 
 </body>
 </html>
