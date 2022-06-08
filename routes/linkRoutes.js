@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 router.post("/",express.urlencoded( {extended: true}), linkController.addLink)
 
 router.delete('/:id', linkController.deleteLink)
-router.delete('/',express.urlencoded( {extended: true}), linkController.deleteLink)
+router.delete('/',express.json(), linkController.deleteLink)
 
 
 module.exports = router
