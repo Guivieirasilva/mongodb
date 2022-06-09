@@ -7,6 +7,9 @@
     <title>Links</title>
 </head>
 <body>
+    <h1>Links</h1>
+    <a href="/add"> Adicionar Link</a>
+
     <% for(let i= 0; i < links.length; i++) { %> 
         <div id="<%=links[i]._id%>">
             <form method="POST" action="/?_method=DELETE" >
@@ -15,6 +18,7 @@
                 <div><%=links[i].url%></div>
                 <input name="id" value="<%=links[i]._id%>" hidden>
                 <button type="submit">Delete</button>
+                <a href="/edit/<%=links[i]._id%>">Editar</a>
             </form>
         </div>
     <% } %> 
