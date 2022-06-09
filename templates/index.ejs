@@ -7,20 +7,74 @@
     <title>Redirection</title>
 </head>
 <body>
-    <h1>Adicione um Link</h1>
+    <style>
+        html, body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; 
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        letter-spacing: 2px;
+    }
+    body{
+        background-color:#5f236b ;
+        color: #F5EB6D;
+    }
+    h1, h3{
+        text-align: center;
+        text-shadow: 0 0 4px black;
+    }
+    #container{
+        background-color: rgba(238, 130, 238, 0.075);
+        border-radius: 10px;
+        padding: 20px;
+        width: 400px;
+        margin: auto;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.363);
+        text-align: center;
+        justify-content: center;
+    }
+    button{
+        border: 2px solid black;
+        border-radius: 5px;
+        background-color: #be375f;
+        width: 100px;
+        height: 40px;
+        transition: 2s;
+    }
+    button:active{
+        transform: scale(1.1, 1.1);
+    }
+    input{
+        display: block;
+        width: 90%;
+        height: 30px;
+        border: 2px solid #ed8554;
+        background-color: transparent;
+        padding: 2px;
+        margin: 10px;
+        border-radius: 5px;
+        color: white;
+        letter-spacing: 1px;
+    }
+    input:focus{
 
-    <form action="/" method="POST">
-        <input type="text" name="title" placeholder="Title" class="field" value="<%= body.title%> " >
+        border: 2px solid #ed8554;
 
-        <input type="text" name="description" placeholder="Description" class="field" value="<%= body.description%>">
+    }
+    </style>
 
-        <input type="text" name="url" placeholder="URL" class="field" value="<%= body.url%>">
+        <h1>Adicione um Link</h1>
 
-        <button>Salvar</button>
-    </form>
-
-    <% if(error){ %> 
-    <h3><%= error.message %> </h3>
-        <% } %> 
+    <div id="container">
+        <form action="/" method="POST">
+            <input type="text" name="title" placeholder="Titulo" class="field" value="<%= body.title%> " required>
+            <input type="text" name="description" placeholder="Descrição" class="field" value="<%= body.description%>">
+            <input type="text" name="url" placeholder="URL" class="field" value="<%= body.url%>">
+            <button>Salvar</button>
+        </form>
+        <% if(error){ %>
+        <h3><%= error.message %> </h3>
+            <% } %>
+    </div>
 </body>
 </html>
