@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Redirection</title>
 </head>
 <body>
-    <h1>Edite um Link</h1>
 
-    <form action="/edit/<%= body.id%>" method="POST">
-        <input type="text" name="title" placeholder="Title" class="field" value="<%= body.title%> " >
-
-        <input type="text" name="description" placeholder="Description" class="field" value="<%= body.description%>">
-
-        <input type="text" name="url" placeholder="URL" class="field" value="<%= body.url%>">
-
-        <button>Salvar</button>
-    </form>
-
-    <% if(error){ %> 
-    <h3><%= error.message %> </h3>
-        <% } %> 
+    <div class="container">
+        <h1 class="text-center m-3">Edite um Link</h1>
+        <form class="d-flex justify-content-center" action="/edit/<%= body.id%>" method="POST">
+            <input type="text" name="title" placeholder="Title" class="m-1 input-group-text" value="<%= body.title%> " >
+            <input type="text" name="description" placeholder="Description" class="m-1 input-group-text" value="<%= body.description%>">
+            <input type="text" name="url" placeholder="URL" class="m-1 input-group-text" value="<%= body.url%>">
+            <button class="btn btn-primary m-1">Salvar</button>
+        </form>
+        <% if(error){ %>
+        <h3><%= error.message %> </h3>
+            <% } %>
+    </div>
 </body>
 </html>

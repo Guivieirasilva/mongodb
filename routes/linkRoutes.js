@@ -8,7 +8,7 @@ const linkController = require("../controllers/linkController")
 router.get('/', linkController.allLinks)
 router.get("/:title", linkController.redirect )
 router.get("/add", (req, res) => {
-    res.render('index', {error:false, body:{}})
+    res.render('add', {error:false, body:{}})
 })
 router.get("/edit/:id", linkController.loadLink)
 
