@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
+// mongoose.set('useFindAndModify', false);
 
 const linkSchema = new mongoose.Schema({
     title: {type:String, required:true},
-    description: String,
+    description:{type: String},
     url: {type:String, required:true},
     click: {type:Number, default:0}
 })

@@ -11,10 +11,10 @@
 
     <div class="container">
         <h1 class="text-center m-3">Edite um Link</h1>
-        <form class="d-flex justify-content-center" action="/edit/<%= body.id%>" method="POST">
-            <input type="text" name="title" placeholder="Title" class="m-1 input-group-text" value="<%= body.title%> " >
-            <input type="text" name="description" placeholder="Description" class="m-1 input-group-text" value="<%= body.description%>">
-            <input type="text" name="url" placeholder="URL" class="m-1 input-group-text" value="<%= body.url%>">
+        <form class="d-flex justify-content-center" action="/edit/<%=body.id%>" method="POST">
+            <input type="text" name="title" placeholder="Title" class="m-1 input-group-text" value="<%=body.title%> " >
+            <input type="text" name="description" placeholder="Description" class="m-1 input-group-text" value="<%=body.description%>">
+            <input type="text" name="url" placeholder="URL" class="m-1 input-group-text" value="<%=body.url%>">
             <button class="btn btn-primary m-1">Salvar</button>
         </form>
         <% if(error){ %>

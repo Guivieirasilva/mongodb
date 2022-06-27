@@ -18,10 +18,10 @@
             <div class="card p-3 mb-3" id="<%=links[i]._id%>">
                 <form class="d-flex align-items-center justify-content-between" method="POST" action="/?_method=DELETE" >
                     <div class="d-flex flex-column">
-                        <h2><%=links[i].title%> </h2>
+                        <h2><%=links[i].title%></h2>
                         <div><%=links[i].description%></div>
                         <div class="text-muted" ><%=links[i].url%></div>
-                        <div class="text-info d-flex mt-2"><i class="material-icons ">bar_chart</i> Clicks: <%=links[i].click%></div>
+                        <div class="text-info d-flex mt-2"><i class="material-icons ">bar_chart</i> Clicks:<%=links[i].click%></div>
 
                     </div>
                     <div class="d-flex flex-column">

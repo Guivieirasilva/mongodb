@@ -5,8 +5,10 @@ const mongoose = require('mongoose')
 const linkRoute = require("./routes/linkRoutes")
 const path = require('path')
 
-mongoose.connect("mongodb://localhost/links")
-
+mongoose.connect('mongodb://localhost:27017/test', {
+  useNewUrlParser: true, // <-- no longer necessary
+  useUnifiedTopology: true // <-- no longer necessary
+});
 
 let db = mongoose.connection
 
