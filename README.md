@@ -4,6 +4,7 @@
 <h3>Stacks Utilizadas</h3>
 <ul> 
   <li>Node JS</li>
+  <li>Express</li>
   <li>Bootstrap</li>
   <li>Banco de dados - Mongo DB</li>
   <li>Mongoose</li>
